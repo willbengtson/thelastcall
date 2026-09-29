@@ -1,0 +1,13 @@
+# Build output
+/bin/
+/internal/webui/dist/*
+!/internal/webui/dist/.gitkeep
+
+# Frontend
+/web/node_modules/
+/web/.vite/
+
+# Local environment
+.env
+.env.local
+.DS_Store

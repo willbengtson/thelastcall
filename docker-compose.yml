@@ -1,0 +1,15 @@
+# Local DynamoDB for development. The real table comes from infrastructure code.
+services:
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: thelastcall-dynamodb
+    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-dbPath", "/data"]
+    working_dir: /home/dynamodblocal
+    user: root
+    ports:
+      - "8042:8000"
+    volumes:
+      - dynamodb-data:/data
+
+volumes:
+  dynamodb-data:
